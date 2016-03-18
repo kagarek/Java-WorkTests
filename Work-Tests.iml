@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="aspose-cells-8.4.1" level="project" />
+    <orderEntry type="library" name="aspose-gridweb-8.4.1" level="project" />
+    <orderEntry type="library" name="bcprov-jdk16-146" level="project" />
+    <orderEntry type="library" name="com.itextpdf:itextpdf:5.5.7" level="project" />
+    <orderEntry type="library" name="org.apache.pdfbox:pdfbox:1.8.10" level="project" />
+    <orderEntry type="library" name="robosuite-api-1.87" level="project" />
+    <orderEntry type="library" name="kapow-patched-http-core-4.1-2014_07_11_11_20_08" level="project" />
+    <orderEntry type="library" name="kapow-patched-http-client-4.1-2014_07_31_13_43_29" level="project" />
+    <orderEntry type="library" name="commons-ssl-0.3.8" level="project" />
+    <orderEntry type="library" name="commons-logging-1.1.1" level="project" />
+    <orderEntry type="library" name="commons-codec-1.4" level="project" />
+    <orderEntry type="library" name="net.sf.ucanaccess:ucanaccess:3.0.3.1" level="project" />
+  </component>
+</module>
