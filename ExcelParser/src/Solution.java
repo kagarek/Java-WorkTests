@@ -1,5 +1,3 @@
-package excelParser;
-
 import com.aspose.cells.Cells;
 import com.aspose.cells.Workbook;
 import com.aspose.cells.Worksheet;

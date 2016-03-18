@@ -1,12 +1,10 @@
-package excelToImage;
-
 import com.aspose.cells.FileFormatType;
 import com.aspose.cells.Workbook;
 
 /**
- * Created by Igor_Makarychev on 25.11.2015.
+ * Created by Igor_Makarychev on 18.03.2016.
  */
-public class ExcelToImage {
+public class Solution {
 
     public static void main(String[] args) throws Exception {
         //Instantiate a new workbook with path to an Excel file

@@ -1,5 +1,3 @@
-package kapow;
-
 import com.kapowtech.robosuite.api.java.repository.engine.RepositoryClient;
 import com.kapowtech.robosuite.api.java.repository.engine.RepositoryClientException;
 import com.kapowtech.robosuite.api.java.repository.engine.RepositoryClientFactory;

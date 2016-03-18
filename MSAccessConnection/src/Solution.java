@@ -1,5 +1,3 @@
-package msAccessConnection;
-
 import java.sql.*;
 
 /**
