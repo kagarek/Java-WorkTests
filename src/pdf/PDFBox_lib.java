@@ -1,4 +1,4 @@
-import org.apache.pdfbox.cos.COSDocument;
+package pdf;import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
@@ -13,12 +13,11 @@ import java.util.ArrayList;
  */
 public class PDFBox_lib {
 
-
     public static void main(String[] args) throws IOException {
         PDFTextStripper pdfStripper = null;
         PDDocument pdDoc = null;
         COSDocument cosDoc = null;
-        File file = new File("C:\\Users\\Igor_Makarychev\\Documents\\!Projects\\03. EFC-PRMS - Element Finance\\EDB - Client Subject Area.pdf");
+        File file = new File("D:\\Scans_20160330083511.pdf");
         try {
             PDFParser parser = new PDFParser(new FileInputStream(file));
             parser.parse();

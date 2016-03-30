@@ -1,4 +1,4 @@
-import java.sql.*;
+package msAccessConnection;import java.sql.*;
 
 /**
  * Created by Igor_Makarychev on 27.01.2016.

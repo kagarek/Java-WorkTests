@@ -1,4 +1,4 @@
-import com.kapowtech.robosuite.api.java.repository.engine.RepositoryClient;
+package kapowRobots;import com.kapowtech.robosuite.api.java.repository.engine.RepositoryClient;
 import com.kapowtech.robosuite.api.java.repository.engine.RepositoryClientException;
 import com.kapowtech.robosuite.api.java.repository.engine.RepositoryClientFactory;
 import com.kapowtech.robosuite.api.java.rql.RQLException;
