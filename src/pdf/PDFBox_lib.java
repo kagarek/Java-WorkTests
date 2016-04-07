@@ -1,4 +1,5 @@
-package pdf;import org.apache.pdfbox.cos.COSDocument;
+package pdf;
+import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
@@ -17,7 +18,7 @@ public class PDFBox_lib {
         PDFTextStripper pdfStripper = null;
         PDDocument pdDoc = null;
         COSDocument cosDoc = null;
-        File file = new File("D:\\Scans_20160330083511.pdf");
+        File file = new File("/Users/igormakarychev/Downloads/Full.pdf");
         try {
             PDFParser parser = new PDFParser(new FileInputStream(file));
             parser.parse();
