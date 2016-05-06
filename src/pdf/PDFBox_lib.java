@@ -25,6 +25,7 @@ public class PDFBox_lib {
             cosDoc = parser.getDocument();
             pdfStripper = new PDFTextStripper();
             pdDoc = new PDDocument(cosDoc);
+
             pdfStripper.setStartPage(1);
             //pdfStripper.setEndPage(5);
             pdfStripper.setEndPage(1);
