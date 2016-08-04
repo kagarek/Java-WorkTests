@@ -25,25 +25,24 @@ import java.util.List;
 public class PDFBoxUtils {
 
     public static void main(String[] args) {
-//        List<File> filesToMerge = new ArrayList<>();
-//        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I1.pdf"));
-//        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I2.pdf"));
-//        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I3.pdf"));
-//        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I4.pdf"));
-//        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I5.pdf"));
-//        mergePDFs(filesToMerge,"/Users/igormakarychev/Dropbox/docs/scans/local passports/Local Passport - Makarychev.pdf");
+        // MERGE PDFS
+        List<File> filesToMerge = new ArrayList<>();
+        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I1.pdf"));
+        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I2.pdf"));
+        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I3.pdf"));
+        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I4.pdf"));
+        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I5.pdf"));
+        mergePDFs(filesToMerge,"/Users/igormakarychev/Dropbox/docs/scans/local passports/Local Passport - Makarychev.pdf");
 
-        //splitPDFtoPages(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/Local Passport - Makarychev.pdf"));
+        //SPLIT PDF TO SEPARATE PAGES
+        splitPDFtoPages(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/Local Passport - Makarychev.pdf"));
 
+        //CONVERT IMAGES TO PDF
         List<String> imagesToConvert = new ArrayList<>();
-
         imagesToConvert.add("/Users/igormakarychev/Dropbox/docs/scans/other documents/Birth certificate - Max.jpg");
         imagesToPDF(imagesToConvert,"/Users/igormakarychev/Dropbox/docs/scans/other documents/Birth certificate - Max.pdf");
-
-        imagesToConvert.clear();
-
-        imagesToConvert.add("/Users/igormakarychev/Dropbox/docs/scans/other documents/Martial certificate.jpg");
-        imagesToPDF(imagesToConvert,"/Users/igormakarychev/Dropbox/docs/scans/other documents/Martial certificate.pdf");
+        //imagesToConvert.add("/Users/igormakarychev/Dropbox/docs/scans/other documents/Martial certificate.jpg");
+        //imagesToPDF(imagesToConvert,"/Users/igormakarychev/Dropbox/docs/scans/other documents/Martial certificate.pdf");
     }
 
     public static void splitPDFtoPages (File file) {
@@ -59,9 +58,7 @@ public class PDFBoxUtils {
                 splittedDocuments.get(i).close();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (COSVisitorException e) {
+        } catch (IOException | COSVisitorException e) {
             e.printStackTrace();
         }
     }
