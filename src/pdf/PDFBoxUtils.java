@@ -26,23 +26,20 @@ public class PDFBoxUtils {
 
     public static void main(String[] args) {
         // MERGE PDFS
-        List<File> filesToMerge = new ArrayList<>();
-        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I1.pdf"));
-        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I2.pdf"));
-        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I3.pdf"));
-        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I4.pdf"));
-        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I5.pdf"));
-        mergePDFs(filesToMerge,"/Users/igormakarychev/Dropbox/docs/scans/local passports/Local Passport - Makarychev.pdf");
+//        List<File> filesToMerge = new ArrayList<>();
+//        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I1.pdf"));
+//        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I2.pdf"));
+//        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I3.pdf"));
+//        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I4.pdf"));
+//        filesToMerge.add(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/I5.pdf"));
+//        mergePDFs(filesToMerge,"/Users/igormakarychev/Dropbox/docs/scans/local passports/Local Passport - Makarychev.pdf");
 
         //SPLIT PDF TO SEPARATE PAGES
-        splitPDFtoPages(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/Local Passport - Makarychev.pdf"));
+//        splitPDFtoPages(new File("/Users/igormakarychev/Dropbox/docs/scans/local passports/Local Passport - Makarychev.pdf"));
 
         //CONVERT IMAGES TO PDF
-        List<String> imagesToConvert = new ArrayList<>();
-        imagesToConvert.add("/Users/igormakarychev/Dropbox/docs/scans/other documents/Birth certificate - Max.jpg");
-        imagesToPDF(imagesToConvert,"/Users/igormakarychev/Dropbox/docs/scans/other documents/Birth certificate - Max.pdf");
-        //imagesToConvert.add("/Users/igormakarychev/Dropbox/docs/scans/other documents/Martial certificate.jpg");
-        //imagesToPDF(imagesToConvert,"/Users/igormakarychev/Dropbox/docs/scans/other documents/Martial certificate.pdf");
+        imageToPDF("/Users/igormakarychev/Dropbox/docs/scans/other documents/Birth certificate - Max.jpg");
+        imageToPDF("/Users/igormakarychev/Dropbox/docs/scans/other documents/Martial certificate.jpg");
     }
 
     public static void splitPDFtoPages (File file) {
@@ -135,29 +132,23 @@ public class PDFBoxUtils {
         }
     }
 
-    public static void imagesToPDF(List<String> imageFileNames, String resultDoc){
+    public static void imageToPDF(String imageFileNames){
         try {
+            String resultDoc = imageFileNames.substring(0,imageFileNames.length()-4)+".pdf";
             PDDocument document = new PDDocument();
 
-            for (int i = 0; i < imageFileNames.size(); i++) {
-                String[] fileNames = new File(imageFileNames.get(i)).list();
-
-                for (int j = 0; j < fileNames.length; j++) {
-                    String image = fileNames[j];
-                    InputStream in = new FileInputStream(image);
-                    BufferedImage bimg = ImageIO.read(in);
-                    float width = bimg.getWidth();
-                    float height = bimg.getHeight();
-                    PDPage page = new PDPage(new PDRectangle(width, height));
-                    document.addPage(page);
-                    BufferedImage awtImage = ImageIO.read(new File(image));
-                    PDXObjectImage img = new PDPixelMap(document, awtImage);
-                    PDPageContentStream contentStream = new PDPageContentStream(document, page);
-                    contentStream.drawImage(img, 0, 0);
-                    contentStream.close();
-                    in.close();
-                }
-            }
+            InputStream in = new FileInputStream(imageFileNames);
+            BufferedImage bimg = ImageIO.read(in);
+            float width = bimg.getWidth();
+            float height = bimg.getHeight();
+            PDPage page = new PDPage(new PDRectangle(width, height));
+            document.addPage(page);
+            BufferedImage awtImage = ImageIO.read(new File(imageFileNames));
+            PDXObjectImage img = new PDPixelMap(document, awtImage);
+            PDPageContentStream contentStream = new PDPageContentStream(document, page);
+            contentStream.drawImage(img, 0, 0);
+            contentStream.close();
+            in.close();
 
             document.save(resultDoc);
             document.close();
