@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="robosuite-api-1.87">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/kapow/robosuite-api-1.87.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
