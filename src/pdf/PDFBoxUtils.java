@@ -2,6 +2,7 @@ package pdf;
 
 import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.exceptions.COSVisitorException;
+import org.apache.pdfbox.io.RandomAccessRead;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -55,7 +56,7 @@ public class PDFBoxUtils {
                 splittedDocuments.get(i).close();
             }
 
-        } catch (IOException | COSVisitorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -87,7 +88,7 @@ public class PDFBoxUtils {
 
     public static String getPDFText(File pdfFile){
         try {
-            PDFParser parser = new PDFParser(new FileInputStream(pdfFile));
+            PDFParser parser = new PDFParser((RandomAccessRead) new FileInputStream(pdfFile));
             parser.parse();
 
             COSDocument cosDoc = parser.getDocument();
@@ -152,7 +153,7 @@ public class PDFBoxUtils {
 
             document.save(resultDoc);
             document.close();
-        } catch (COSVisitorException|IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

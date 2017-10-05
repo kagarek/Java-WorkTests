@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="commons-codec-1.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/kapow/commons-codec-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/kapow/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/kapow/commons-ssl-0.3.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/kapow/kapow-patched-http-client-4.1-2014_07_31_13_43_29.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/kapow/kapow-patched-http-core-4.1-2014_07_11_11_20_08.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/kapow/robosuite-api-1.87.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

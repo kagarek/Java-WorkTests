@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jempbox-1.8.12">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jempbox-1.8.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
